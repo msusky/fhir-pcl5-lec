@@ -1,0 +1,63 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <language>
+    <system value="urn:ietf:bcp:47"/>
+    <code value="en"/>
+  </language>
+  <url value="http://tele-neps.de/fhir/CodeSystem/PCL5-LEC_P2BQ3_AnswerList"/>
+  <version value="0.0.1"/>
+  <name value="PCL5-LEC_P2BQ3_AnswerList"/>
+  <title value="PCL-5 with LEC Part 2B Question 3 Answer List"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="[dateTime]"/><!-- 0..1 Date last changed -->
+  <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+  <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+  <description value="[markdown]"/><!-- 0..1 Natural language description of the code system -->
+  <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+  <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for code system (if applicable) --></jurisdiction>
+  <purpose value="[markdown]"/><!-- 0..1 Why this code system is defined -->
+  <compositional value="false"/>
+  <versionNeeded value="false"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="PCL5-LEC_P2BQ3_A01"/>
+    <display value="It happened to me directly"/>
+    <designation>
+      <language value="de"/>
+      <value value="Es ist mir selbst passiert"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ3_A02"/>
+    <display value="I witnessed it"/>
+    <designation>
+      <language value="de"/>
+      <value value="Ich habe es beobachtet"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ3_A03"/>
+    <display value="I learned about it happening to a close member or close friend"/>
+    <designation>
+      <language value="de"/>
+      <value value="Ich habe erfahren, dass es einem nahen Angehörigen oder engen Freund passiert ist"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ3_A04"/>
+    <display value="I was repeatedly exposed to details about it as part of my job (for example, paramedic, police, military, or other first responder)"/>
+    <designation>
+      <language value="de"/>
+      <value value="Ich wurde im Rahmen meines Berufes wiederholt mit Details des Ereignisses konfrontiert (z.B. Rettungssanitäter, Polizist, Soldat oder anderer Ersthelfer)"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ3_A05"/>
+    <display value="Other, please describe"/>
+    <designation>
+      <language value="de"/>
+      <value value="Sonstiges, bitte beschreiben"/>
+    </designation>
+  </concept>
+</CodeSystem>

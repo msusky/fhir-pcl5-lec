@@ -1,0 +1,47 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <language>
+    <system value="urn:ietf:bcp:47"/>
+    <code value="en"/>
+  </language>
+  <url value="http://tele-neps.de/fhir/CodeSystem/PCL5-LEC_P2BQ7_AnswerList"/>
+  <version value="0.0.1"/>
+  <name value="PCL5-LEC_P2BQ7_AnswerList"/>
+  <title value="PCL-5 with LEC Part 2B Question 7 Answer List"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="[dateTime]"/><!-- 0..1 Date last changed -->
+  <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+  <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+  <description value="[markdown]"/><!-- 0..1 Natural language description of the code system -->
+  <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+  <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for code system (if applicable) --></jurisdiction>
+  <purpose value="[markdown]"/><!-- 0..1 Why this code system is defined -->
+  <compositional value="false"/>
+  <versionNeeded value="false"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="PCL5-LEC_P2BQ7_A01"/>
+    <display value="Accident or violence"/>
+    <designation>
+      <language value="de"/>
+      <value value="Unfall oder Gewalt"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ7_A02"/>
+    <display value="Natural causes"/>
+    <designation>
+      <language value="de"/>
+      <value value="Natürliche Umstände"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P2BQ7_A03"/>
+    <display value="Not applicable (The event did not involve the death of a close family member or close friend)"/>
+    <designation>
+      <language value="de"/>
+      <value value="Nicht zutreffend (Das Ereignis beinhaltete nicht den Tod eines nahen Angehörigen oder Freundes)"/>
+    </designation>
+  </concept>
+</CodeSystem>

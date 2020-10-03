@@ -1,0 +1,62 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <language>
+    <system value="urn:ietf:bcp:47"/>
+    <code value="en"/>
+  </language>
+  <url value="http://tele-neps.de/fhir/CodeSystem/PCL5-LEC_P3_AnswerList"/>
+  <version value="0.0.1"/>
+  <name value="PCL5-LEC_P3_AnswerList"/>
+  <title value="PCL-5 with LEC Part 3 Answer List"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+  <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+  <description value="[markdown]"/><!-- 0..1 Natural language description of the code system -->
+  <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+  <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for code system (if applicable) --></jurisdiction>
+  <purpose value="[markdown]"/><!-- 0..1 Why this code system is defined -->
+  <compositional value="false"/>
+  <versionNeeded value="false"/>
+  <content value="complete"/>
+  <count value="5"/>
+  <concept>
+    <code value="PCL5-LEC_P3_A01"/>
+    <display value="Not at all"/>
+    <designation>
+      <language value="de"/>
+      <value value="überhaupt nicht"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P3_A02"/>
+    <display value="A little bit"/>
+    <designation>
+      <language value="de"/>
+      <value value="ein wenig"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P3_A03"/>
+    <display value="Moderately"/>
+    <designation>
+      <language value="de"/>
+      <value value="ziemlich"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P3_A04"/>
+    <display value="Quite a bit"/>
+    <designation>
+      <language value="de"/>
+      <value value="stark"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P3_A05"/>
+    <display value="Extremely"/>
+    <designation>
+      <language value="de"/>
+      <value value="sehr stark"/>
+    </designation>
+  </concept>
+</CodeSystem>

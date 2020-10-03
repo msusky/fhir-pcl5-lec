@@ -1,0 +1,70 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <language>
+    <system value="urn:ietf:bcp:47"/>
+    <code value="en"/>
+  </language>
+  <url value="http://tele-neps.de/fhir/CodeSystem/PCL5-LEC_P1_AnswerList"/>
+  <version value="0.0.1"/>
+  <name value="PCL5-LEC_P1_AnswerList"/>
+  <title value="PCL-5 with LEC Part 1 Answer List"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+  <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+  <description value="[markdown]"/><!-- 0..1 Natural language description of the code system -->
+  <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+  <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for code system (if applicable) --></jurisdiction>
+  <purpose value="[markdown]"/><!-- 0..1 Why this code system is defined -->
+  <compositional value="false"/>
+  <versionNeeded value="false"/>
+  <content value="complete"/>
+  <count value="6"/>
+  <concept>
+    <code value="PCL5-LEC_P1_A01"/>
+    <display value="Happened to me"/>
+    <designation>
+      <language value="de"/>
+      <value value="mir persönlich zugestoßen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P1_A02"/>
+    <display value="Witnessed it"/>
+    <designation>
+      <language value="de"/>
+      <value value="zeuge davon gewesen"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P1_A03"/>
+    <display value="Learned about it"/>
+    <designation>
+      <language value="de"/>
+      <value value="davon erfahren"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P1_A04"/>
+    <display value="Part of my job"/>
+    <designation>
+      <language value="de"/>
+      <value value="im Rahmen meines Berufs"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P1_A05"/>
+    <display value="Not sure"/>
+    <designation>
+      <language value="de"/>
+      <value value="unsicher"/>
+    </designation>
+  </concept>
+  <concept>
+    <code value="PCL5-LEC_P1_A06"/>
+    <display value="Doesn't apply"/>
+    <designation>
+      <language value="de"/>
+      <value value="trifft nicht zu"/>
+    </designation>
+  </concept>
+</CodeSystem>
