@@ -1,0 +1,314 @@
+<Questionnaire xmlns="http://hl7.org/fhir">
+  <language>
+    <system value="urn:ietf:bcp:47"/>
+    <code value="de"/>
+  </language>
+  <url value="http://tele-neps.de/fhir/Questionnaire/PCL5_LEC"/>
+  <identifier><!-- 0..* Identifier Additional identifier for the questionnaire --></identifier>
+  <version value="[string]"/><!-- 0..1 Business version of the questionnaire -->
+  <name value="[string]"/><!-- ?? 0..1 Name for this questionnaire (computer friendly) -->
+  <title value="[string]"/><!-- 0..1 Name for this questionnaire (human friendly) -->
+  <derivedFrom><!-- 0..* canonical(Questionnaire) Instantiates protocol or definition --></derivedFrom>
+  <status value="[code]"/><!-- 1..1 draft | active | retired | unknown -->
+  <experimental value="[boolean]"/><!-- 0..1 For testing purposes, not real usage -->
+  <subjectType value="[code]"/><!-- 0..* Resource that can be subject of QuestionnaireResponse -->
+  <date value="[dateTime]"/><!-- 0..1 Date last changed -->
+  <publisher value="[string]"/><!-- 0..1 Name of the publisher (organization or individual) -->
+  <contact><!-- 0..* ContactDetail Contact details for the publisher --></contact>
+  <description value="[markdown]"/><!-- 0..1 Natural language description of the questionnaire -->
+  <useContext><!-- 0..* UsageContext The context that the content is intended to support --></useContext>
+  <jurisdiction><!-- 0..* CodeableConcept Intended jurisdiction for questionnaire (if applicable) --></jurisdiction>
+  <purpose value="[markdown]"/><!-- 0..1 Why this questionnaire is defined -->
+  <copyright value="[markdown]"/><!-- 0..1 Use and/or publishing restrictions -->
+  <approvalDate value="[date]"/><!-- 0..1 When the questionnaire was approved by publisher -->
+  <lastReviewDate value="[date]"/><!-- 0..1 When the questionnaire was last reviewed -->
+  <effectivePeriod><!-- 0..1 Period When the questionnaire is expected to be used --></effectivePeriod>
+  <code><!-- 0..* Coding Concept that represents the overall questionnaire --></code>
+  <item>  <!-- ?? 0..* Questions and sections within the Questionnaire -->
+    <linkId value="[string]"/><!-- 1..1 Unique id for item in questionnaire -->
+    <definition value="[uri]"/><!-- 0..1 ElementDefinition - details for the item -->
+    <code><!-- ?? 0..* Coding Corresponding concept for this item in a terminology --></code>
+    <prefix value="[string]"/><!-- 0..1 E.g. "1(a)", "2.5.3" -->
+    <text value="[string]"/><!-- 0..1 Primary text for the item -->
+    <type value="[code]"/><!-- 1..1 group | display | boolean | decimal | integer | date | dateTime + -->
+    <enableWhen>  <!-- 0..* Only allow data when -->
+      <question value="[string]"/><!-- 1..1 Question that determines whether item is enabled -->
+      <operator value="[code]"/><!-- 1..1 exists | = | != | > | < | >= | <= -->
+      <answer[x]><!-- ?? 1..1 boolean|decimal|integer|date|dateTime|time|string|Coding|
+        Quantity|Reference(Any) Value for question comparison based on operator --></answer[x]>
+    </enableWhen>
+    <enableBehavior value="[code]"/><!-- ?? 0..1 all | any -->
+    <required value="[boolean]"/><!-- ?? 0..1 Whether the item must be included in data results -->
+    <repeats value="[boolean]"/><!-- ?? 0..1 Whether the item may repeat -->
+    <readOnly value="[boolean]"/><!-- ?? 0..1 Don't allow human editing -->
+    <maxLength value="[integer]"/><!-- ?? 0..1 No more than this many characters -->
+    <answerValueSet><!-- ?? 0..1 canonical(ValueSet) Valueset containing permitted answers --></answerValueSet>
+    <answerOption>  <!-- ?? 0..* Permitted answer -->
+      <value[x]><!-- 1..1 integer|date|time|string|Coding|Reference(Any) Answer value --></value[x]>
+      <initialSelected value="[boolean]"/><!-- 0..1 Whether option is selected by default -->
+    </answerOption>
+    <initial>  <!-- ?? 0..* Initial value(s) when item is first rendered -->
+      <value[x]><!-- 1..1 boolean|decimal|integer|date|dateTime|time|string|uri|
+        Attachment|Coding|Quantity|Reference(Any) Actual value for initializing the question --></value[x]>
+    </initial>
+    <item><!-- ?? 0..* Content as for Questionnaire.item Nested questionnaire items --></item>
+  </item>
+
+  <item>
+    <linkId value="P1"/>
+    <prefix value="Teil 1"/>
+    <text value="Nachfolgend sind eine Anzahl schwieriger oder belastender Dinge aufgelistet, die Menschen manchmal zustoßen. Kreuzen Sie für jedes Ereignis eines oder mehrere Felder auf der rechten Seite an, um anzugeben, dass (a) es Ihnen persönlich zugestoßen ist; (b) Sie Zeuge davon waren, als es jemand anderem zugestoßen ist; (c) Sie davon erfahren haben, dass es einem nahen Angehörigen oder engen Freund zugestoßen ist; (d) Sie damit im Rahmen Ihres Berufes konfrontiert wurden (z.B. Rettungssanitäter, Polizist, Soldat oder anderer Ersthelfer); (e) Sie unsicher sind, ob es zutrifft; oder (f) es auf Sie nicht zutrifft. <p>Bitte achten Sie darauf, Ihr <strong>gesamtes Leben</strong> zu berücksichtigen (Kindheit/Jugend und Erwachsenenalter), wenn Sie die Liste der Ereignisse durchgehen.</p>"/>
+    <type value="group"/>
+    <required value="true"/>
+    <repeats value="false"/>
+    <readOnly value="true"/>
+    <item>
+      <linkId value="P1Q01"/>
+      <prefix value="1."/>
+      <text value="Naturkatastrophe (z.B. Überschwemmung, Orkan, Tornado, Erdbeben)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q02"/>
+      <prefix value="2."/>
+      <text value="Feuer oder Explosion"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q03"/>
+      <prefix value="3."/>
+      <text value="Verkehrsunfall (z.B. Autounfall, Schiffsunglück, Zugunglück, Flugzeugabsturz)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q4"/>
+      <prefix value="4."/>
+      <text value="Schwerer Unfall bei der Arbeit, zuhause oder während einer Freizeitaktivität"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q05"/>
+      <prefix value="5."/>
+      <text value="Einem Schadstoff ausgesetzt sein (z.B. gefährliche Chemikalien, Strahlung)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q06"/>
+      <prefix value="6."/>
+      <text value="Gewalttätiger Angriff (z.B. überfallen, geschlagen, getreten oder zusammengeschlagen werden)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q07"/>
+      <prefix value="7."/>
+      <text value="Angriff mit einer Waffe (z.B. verletzt oder bedroht werden mit einer Schusswaffe, einem Messer oder einer Bombe)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q08"/>
+      <prefix value="8."/>
+      <text value="Sexueller Übergriff (Vergewaltigung, versuchte Vergewaltigung, zu irgendeiner Art von sexueller Handlung durch Gewalt oder Androhung von Gewalt gezwungen werden)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q09"/>
+      <prefix value="9."/>
+      <text value="Andere unerwünschte oder unangenehmesexuelle Erfahrung"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q10"/>
+      <prefix value="10."/>
+      <text value="Kampfhandlungen oder Aufenthalt in einem Kriegsgebiet (beim Militär oder als Zivilist)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q11"/>
+      <prefix value="11."/>
+      <text value="Gefangenschaft (z.B. gekidnappt, entführt, als Geisel genommen werden, Kriegsgefangener)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q12"/>
+      <prefix value="12."/>
+      <text value="Lebensbedrohliche Erkrankung oder Verletzung"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q13"/>
+      <prefix value="13."/>
+      <text value="Schweres menschliches Leid"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q14"/>
+      <prefix value="14."/>
+      <text value="Plötzlicher gewalttätiger Tod (z.B. Mord, Suizid)"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q15"/>
+      <prefix value="15."/>
+      <text value="Plötzlicher Unfalltod"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q16"/>
+      <prefix value="16."/>
+      <text value="Schwere Verletzung, Schaden oder Tod, die/den Sie jemand anderem zugefügt haben"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+    <item>
+      <linkId value="P1Q17"/>
+      <prefix value="17."/>
+      <text value="Irgendein anderes sehr belastendes Ereignis oder Erlebnis"/>
+      <type value="choice"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+      <answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P1_AnswerList"/>
+    </item>
+  </item>
+  <item>
+    <linkId value="P2"/>
+    <text value="TEIL 2"/>
+    <required value="true"/>
+    <repeats value="false"/>
+    <readOnly value="true"/>
+    <item>
+      <linkId value="P2A"/>
+      <prefix value="A."/>
+      <text value="Falls Sie irgendetwas bei Nr. 17 in TEIL 1 angekreuzt haben,  benennen  Sie  kurz  das  Ereignis,  an  das  Sie  gedacht haben"/>
+      <type value="string"/>
+      <enableWhen>
+        <!-- TODO: use initial empty answer?-->
+        <question value="P1Q17"/>
+        <operator value="="/>
+        <answer[x]><!-- ?? 1..1 boolean|decimal|integer|date|dateTime|time|string|Coding|
+          Quantity|Reference(Any) Value for question comparison based on operator --></answer[x]>
+      </enableWhen>
+      <enableBehavior value="all"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="false"/>
+    </item>
+    <item>
+      <linkId value="P2B"/>
+      <prefix value="B."/>
+      <text value="Falls Sie mehr als eines der in TEIL 1 genannten Ereignisse erlebt haben, denken Sie bitte an das Ereignis, das Sie als das schlimmste Ereignis betrachten; das bedeutet für diesen Fragebogen das Ereignis, das Sie zurzeit am meisten belastet. Falls Sie nur eines der in TEIL 1 genannten Ereignisse erlebt haben, nehmen Sie dieses als das schlimmste Ereignis. Bitte beantworten Sie die folgenden Fragen in Bezug auf das schlimmste Ereignis (kreuzen Sie alle Auswahlmöglichkeiten an, die zutreffen)"/>
+      <type value="group"/>
+      <required value="true"/>
+      <repeats value="false"/>
+      <readOnly value="true"/>
+      <item>
+        <linkId value="P2BQ1"/>
+        <prefix value="1."/>
+        <text value="Beschreiben Sie kurz das schlimmste Ereignis (z.B. was passierte, wer beteiligt war, usw.)"/>
+        <type value="string"/>
+        <required value="true"/>
+        <repeats value="false"/>
+        <readOnly value="false"/>
+      </item>
+      <item>
+        <linkId value="P2BQ2"/>
+	<prefix value="2."/>
+        <!-- TODO: questionnaire-unit extension -->
+        <text value="Wie lange ist es her? (Bitte schätzen, falls Sie sich nicht sicher sind)"/>
+        <type value="string"/>
+        <required value="true"/>
+        <repeats value="false"/>
+        <readOnly value="false"/>
+      </item>
+      <item>
+        <linkId value="P2BQ3"/>
+	<prefix value="3."/>
+        <text value="Auf welche Weise haben Sie es erlebt?"/>
+        <type value="choice"/>
+        <required value="true"/>
+        <repeats value="false"/>
+        <readOnly value="false"/>
+      	<answerValueSet value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P2BQ3_AnswerList"/>
+        <item>
+          <linkId value="P2BQ3_A5"/>
+          <type value="string"/>
+          <enableWhen>
+            <question value="P2BQ3"/>
+            <operator value="="/>
+	    <answer>
+	      <system value="http://tele-neps.de/fhir/ValueSet/PCL5-LEC_P2BQ3_AnswerList"/>
+	      <code value="P2BQ3_A5"/>
+	    </answer>
+          </enableWhen>
+          <enableBehavior value="all"/>
+          <required value="true"/>
+          <repeats value="false"/>
+          <readOnly value="false"/>
+        </item>
+      </item>
+    </item>
+  </item>
+</Questionnaire>
